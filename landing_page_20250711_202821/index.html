@@ -1,0 +1,88 @@
+
+    <!DOCTYPE html>
+    <html lang="he">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>דף נחיתה מקצועי</title>
+        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                margin: 0;
+                font-family: 'Heebo', sans-serif;
+                background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
+                color: #333;
+            }
+            header {
+                background-color: #4a90e2;
+                color: white;
+                padding: 40px 20px;
+                text-align: center;
+            }
+            h1 {
+                margin: 0;
+                font-size: 36px;
+            }
+            section {
+                padding: 40px 20px;
+                max-width: 900px;
+                margin: auto;
+            }
+            .gallery {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .gallery img {
+                width: 280px;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 12px;
+            }
+            .cta {
+                text-align: center;
+                margin-top: 40px;
+            }
+            button {
+                background-color: #4a90e2;
+                color: white;
+                font-size: 18px;
+                padding: 12px 32px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            button:hover {
+                background-color: #357ab8;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>ברוכים הבאים לדף הנחיתה של מיטל</h1>
+            <p>למטפלת באקנה עם המלצות של לקוחות</p>
+        </header>
+
+        <section>
+            <h2>קצת עלינו</h2>
+            <p>מיטל היא מאפרת מקצועית עם ניסיון עשיר באיפור כלות, אירועים והפקות. תנו לה לדאוג שתיראו הכי זוהרות שיש ביום הגדול שלכם.</p>
+        </section>
+
+        <section>
+            <h2>תמונות מהעבודות</h2>
+            <div class="gallery">
+                <img src="https://source.unsplash.com/featured/?makeup" alt="איפור מקצועי">
+                <img src="https://source.unsplash.com/featured/?wedding" alt="כלה מאופרת">
+                <img src="https://source.unsplash.com/featured/?beauty" alt="יופי">
+            </div>
+        </section>
+
+        <section class="cta">
+            <h2>רוצה לשמוע עוד?</h2>
+            <a href="https://wa.me/972000000000"><button>שלחי לי וואטסאפ</button></a>
+        </section>
+    </body>
+    </html>
+    
