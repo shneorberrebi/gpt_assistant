@@ -41,11 +41,17 @@ def upload_files_to_github(repo, folder_path):
     for file_path in files:
         relative_path = file_path.relative_to(folder_path).as_posix()
         try:
+            file_content = file_path.read_text(encoding="utf-8")
+        except UnicodeDecodeError:
+            print(f"⛔ Skipped (non-text): {relative_path}")
+            continue
+
+        try:
             contents = repo.get_contents(relative_path)
-            repo.update_file(contents.path, f"🔄 Update {relative_path}", file_path.read_text(encoding="utf-8"), contents.sha)
+            repo.update_file(contents.path, f"🔄 Update {relative_path}", file_content, contents.sha)
             print(f"✅ Updated: {relative_path}")
         except:
-            repo.create_file(relative_path, f"🆕 Add {relative_path}", file_path.read_text(encoding="utf-8"))
+            repo.create_file(relative_path, f"🆕 Add {relative_path}", file_content)
             print(f"🆕 Created: {relative_path}")
 
 # ⬆️ מפעיל את ההעלאה
