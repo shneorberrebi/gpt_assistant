@@ -20,11 +20,13 @@ from video_editing_prompt_instructions import get_video_editing_prompt
 
 import json, os
 
-# 💾 פרטים אישיים
+from dotenv import load_dotenv
+load_dotenv()
+
 personal_info = {
-    "email": "lutya.co@gmail.com",
-    "שם": "shneor",
-    "טלפון": "0585333099"
+    "email": os.getenv("EMAIL"),
+    "שם": os.getenv("NAME"),
+    "טלפון": os.getenv("PHONE")
 }
 
 # 🧠 זיכרון פעולות – כדי לא לחזור על אותן פעולות
