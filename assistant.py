@@ -1,12 +1,17 @@
-# simple_assistant.py – עוזר מבצע פקודות בסיסיות דרך GPT
+# assistant.py – עוזר מבצע פקודות בסיסיות דרך GPT
 
 import pyautogui
 import time
+import os
 from openai import OpenAI
+from dotenv import load_dotenv
 
-# 🛡️ שמור את המפתח כמשתנה סביבה או בקובץ נפרד אם תפרסם את הקוד
+# 🟢 טוען את המפתחות מקובץ .env
+load_dotenv()
+
+# 🧠 התחברות ל־OpenAI עם מפתח סודי
 client = OpenAI(
-    api_key="sk-proj-..."  # מומלץ להסתיר
+    api_key=os.getenv("OPENAI_API_KEY")
 )
 
 def execute_command(command):
@@ -27,7 +32,7 @@ def execute_command(command):
     except Exception as e:
         print(f"❌ שגיאה בביצוע הפקודה: {e}")
 
-# 🔁 לולאה שמקבלת פקודה מהמשתמש -> GPT -> פעולה
+# 🔁 לולאה: המשתמש מקליד → GPT מחזיר פקודה → העוזר מבצע
 while True:
     user_input = input("מה אתה רוצה שהעוזר יעשה? (או 'exit' כדי לצאת):\n")
     if user_input.lower() in ["exit", "יציאה"]:
